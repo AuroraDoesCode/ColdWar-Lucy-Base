@@ -1,20 +1,41 @@
 
-KillAllZombies()//works, just may take a couple of runs while it goes through the arrays.
+KillAllZombies()
 {
     level.zombie_total = 0;
     for(a=0;a<3;a++)
     {
-        zombies = GetAITeamArray(level.zombie_team);
-        for(z=0;z<zombies.size;z++)
+        enemies = getaiteamarray( level.zombie_team );
+    
+        if ( isdefined( enemies ) )
         {
-            if(isDefined(zombies[z]) && IsAlive(zombies[z]))
-                zombies[z] doDamage(zombies[z].health + 99, zombies[z].origin);
+            for (i = 0; i < enemies.size; i++) {
+                enemy = enemies[ i ];
+            
+                if ( zm_utility::is_magic_bullet_shield_enabled( enemy ) )
+                {
+                    enemy util::stop_magic_bullet_shield();
+                }
+            
+                enemy.allowdeath = 1;
+                enemy kill( undefined, undefined, undefined, undefined, undefined, 1 );
+            }
+        }
+    
+        wait .5;
+        corpses = getcorpsearray();
+    
+        foreach ( corpse in corpses )
+        {
+            if ( isactorcorpse( corpse ) )
+            {
+                corpse delete();
+            }
         }
     }
     self PrintToLevel("^5All Zombies ^2Eliminated", true);
 }
 
-EditRound(newRound)//works fine, just need to fix killallzombies properly
+EditRound(newRound)
 {
     level zm_game_module::zombie_goto_round(newRound);
     self PrintToLevel("^5Round Set To: ^2"+newRound); 

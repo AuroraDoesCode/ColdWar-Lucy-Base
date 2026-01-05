@@ -78,8 +78,8 @@ InitWeapArrays()
     level._MauerDerTotenItemNames = StrTok("Klaus Battery",",");
     level._ForsakenItems = StrTok("item_zmquest_tungsten_pap_quest_part_a,axe_gun_volatile_crystal_item_t9,axe_gun_energetic_shard_item_t9",",");
     level._ForsakenItemNames = StrTok("Circuit Board,Chrysalax Volatile Shard,Chrysalax Energetic Shard",",");
-    level._TacticalEquipment = StrTok("eq_stimshot,eq_slow_grenade,eq_grapple,nightingale,cymbal_monkey,w_black_hole_bomb",",");
-    level._TacticalEquipmentNames = StrTok("Stimshot,Stunn Grenade,Grapple Gun,Decoy,Cymbal Monkey,LT53 Kazamir",",");
+    level._TacticalEquipment = StrTok("eq_stimshot,eq_slow_grenade,eq_grapple,nightingale,cymbal_monkey,eq_black_hole_grenade",",");
+    level._TacticalEquipmentNames = StrTok("Stimshot,Stun Grenade,Grapple Gun,Decoy,Cymbal Monkey,LT53 Kazamir",",");
     level._LethalEquipment = StrTok("frag_grenade,eq_sticky_grenade,eq_molotov,satchel_charge",",");
     level._LethalEquipmentNames = StrTok("Frag,Semtex,Molotov,C4",",");
     level._SupportEquipment = StrTok("sig_bow_flame,hero_annihilator,sig_lmg,hero_flamethrower,veh_t9_mil_us_air_napalm_strike_pickup,wpn_t9_eqp_ultimate_turret_pickup,hash_3f33adcbed7f6c86,remote_missile_zm,veh_t9_zm_arc_xd,chopper_gunner,self_revive_item_t9",",");
@@ -97,6 +97,30 @@ replaceChar(string, substring, replace)
             final += string[e];
     }
     return final;
+}
+StrReplace( str, what, to ){
+        outstring="";
+        if( !isString(what) ) {
+                outstring = str;
+                for(i=0;i<what.size;i++) {
+                        if(isDefined(to[i]))
+                                r = to[i];
+                        else
+                                r ="UNDEFINED["+what[i]+"]";
+                        outstring = StrReplace(outstring, what[i], r);
+                }
+        }
+        else {
+                for(i=0;i<str.size;i++) {
+                        if(GetSubStr(str,i,i+what.size )==what) {
+                                outstring+=to;
+                                i+=what.size-1;
+                        }
+                        else
+                                outstring+=GetSubStr(str,i,i+1);
+                }
+        }
+        return outstring;
 }
 
 constructString(string)
@@ -131,9 +155,9 @@ playerSetup()
     {
         wait 5;
         self PrintToLevel(".");
-        self PrintToLevel("^9Welcome To " + level.menuName);
+        self PrintToLevel("^9Welcome To " + level.menuName +"! Your Access Level: "+ self.playerSetting["verification"]);
         self PrintToLevel("^1Developed By: ^2" + level.menuDeveloper+", "+level.menuVersion);
-        self PrintToLevel("^0Verification Status: " + self.playerSetting["verification"]);
+        self thread PrintedControls();
     }
     
     self thread menuMonitor();
@@ -153,6 +177,7 @@ defineVariables()
     if(!isDefined(self.menu["curs"]))
         self.menu["curs"] = [];
     self.menuUseHint=false;
+    self.menuTextColor = "";
     self.playerSetting["isInMenu"] = undefined;
     self.menu["currentMenu"] = "Main";
     self.menu["curs"][self.menu["currentMenu"]] = 0;

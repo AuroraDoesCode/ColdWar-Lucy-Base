@@ -21,7 +21,7 @@ setVerification(a, player, msg)
         player closeMenu1();
     player.menu["currentMenu"] = "Main";
     player.menu["curs"][player.menu["currentMenu"]] = 0;
-    
+    player thread PrintedControls();
     player runMenuIndex("Main");
 }
 

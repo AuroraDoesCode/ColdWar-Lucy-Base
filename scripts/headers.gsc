@@ -65,17 +65,17 @@ autoexec __init__sytem__()
     //zombies per round
     self.zombies_per_rounds = 999999;
     //remove rank cap
-    level.rankcap = undefined;
+    //level.rankcap = undefined;
     //XP Multiplier
     thread get_xp_multiplier_late();
     // no contract
-    level.var_aa2d5655 = undefined;
+    //level.var_aa2d5655 = undefined;
     // can xp
-    level.var_5164a0ca = undefined;
+    //level.var_5164a0ca = undefined;
     // disable ee
-    level.var_73d1e054 = undefined;
+    //level.var_73d1e054 = undefined;
     // end game mode type
-    level.var_211e3a53 = undefined;
+    //level.var_211e3a53 = undefined;
 }
 
 event_handler[gametype_init] gametype_init(*eventstruct) {
@@ -90,7 +90,7 @@ __init__()
 get_xp_multiplier_late() {
     wait 10;
     level.var_3426461d = &GetXPMultiplier;
-    level.var_2f528eb0 = &GetXPMultiplier;//weapon XP Mult
+    //level.var_2f528eb0 = &GetXPMultiplier;//weapon XP Mult
 }
 
 on_round_end() {

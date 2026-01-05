@@ -270,3 +270,39 @@ TriggerExfil()
 {
     level flag::set(#"hash_3e765c26047c9f54" );
 }
+
+
+
+GetAllItems(itemspawnlist)
+{
+    list = "";
+    for(i=0;i<itemspawnlist.size;i++)
+    {
+        if (IsSubStr(itemspawnlist[i].itementry, "item_sr"))
+        {
+            if(i < itemspawnlist.size - 1)
+                list += itemspawnlist[i].itementry + ",";
+            else
+                list += itemspawnlist[i].itementry;
+        }
+    }
+    self PrintToLevel("ITEM LIST: " + list);
+    return StrTok(list, ",");
+}
+
+GetSpawnItems(itemspawnlist)
+{
+    list = "";
+    for(i=0;i<itemspawnlist.size;i++)
+    {
+        if (IsSubStr(itemspawnlist[i].itementry, "_list"))
+        {
+            if(i < itemspawnlist.size - 1)
+                list +=  itemspawnlist[i].itementry + ",";
+            else
+                list += itemspawnlist[i].itementry;
+        }
+    }
+    self PrintToLevel("SPAWN LIST: " + list);
+    return StrTok(list, ",");
+}

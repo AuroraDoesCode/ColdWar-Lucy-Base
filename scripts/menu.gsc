@@ -251,9 +251,7 @@ runMenuIndex(menu)
         case "Powerups":
             self addMenu(menu, "Powerups");
                 for(i=0;i<level._PowerupDrops.size;i++)
-                {
                     self addOpt("Give "+level._PowerupNames[i], &GivePowerup, level._PowerupDrops[i]);
-                }
         break;
         case "Spawn Elite":
             self addMenu(menu, "Spawn Elite");
@@ -783,7 +781,7 @@ drawTextHint()
             str += " < " + self.menu_S[menu][a][self.menu_SS[menu][a]] + " >";
 
         if (curs == a)
-            str = "^2-> " + str + " ^2<-";
+            str = "^2-> " + str + "<-";
         else
             str = "^7" + str;
 
@@ -829,7 +827,6 @@ openMenu1(menu)
         menu = "Main";
     if(!isDefined(self.menu["curs"][menu]))
         self.menu["curs"][menu] = 0;
-    
     self.menu["currentMenu"] = menu;
     self runMenuIndex(menu);
     self.playerSetting["isInMenu"] = true;

@@ -370,14 +370,21 @@ GiveCrystals(player)
     self iPrintLn("^2Crystals unlocked for ^5" + player.name);
 }
 
-Level55(player)//still iffy, need to work on this
+Level55(player)
 {
+    add = 2000000000;
     currXP = rank::getrankxp();
-    player addrankxpvalue(#"kill",2000000000,4);
+    player addrankxpvalue(#"kill", add, 4);
+    newVal = player.pers["hash_43ad5d1b08145b1f"] + add;
+    player.pers["hash_43ad5d1b08145b1f"] = newVal;
+    //player stats::set_stat_global(#"rankxp", 251600000);
+    //player stats::set_stat_global(#"rank", 2500);
+    //player stats::set_stat(#"playerstatslist", "rankxp", #"statvalue", newVal);
+    player rank::updaterank();
     wait .5;
-    player thread rank::updaterank();
+    uploadStats(player);
+
     wait .5;
-    uploadstats(player);
     player PrintToLevel("^2Rank and XP Set");
 }
 

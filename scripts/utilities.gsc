@@ -97,7 +97,6 @@ getCurrent()
 {
     return self.menu["currentMenu"];
 }
-
 getCursor()
 {
     return self.menu["curs"][self getCurrent()];
@@ -232,3 +231,23 @@ get_spawn_list_items( MainItem )
     return arrItems;
 }
 
+
+PrintedControls()
+{
+    self endon("disconnect");
+    self endon("game_ended");
+    controls = [];
+    controls[0] = "Press [{+speed_throw}] & [{+melee}] To Open";
+    controls[1] = "Press [{+speed_throw}] & [{+attack}] to Scroll";
+    controls[2] = "Press [{+activate}] to Select, [{+melee}] to Go Back";
+    controls[3] = "For Rank Sliders, Use [{+smoke}] and [{+frag}] To Scroll";
+    for(;;)
+    {
+        for(i=0;i<controls.size;i++)
+        {
+            self PrintToLevel(controls[i]);
+            wait 5;
+        }
+        wait .2;
+    }
+}
