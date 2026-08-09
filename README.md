@@ -46,7 +46,7 @@
 ### Prerequisites
 
 To use this Mod Menu, you must have Visual Studio Code, and T7 Compiler.
-You can download T7 Compiler [Here](https://github.com/ate47/t7-compiler-custom/releases/) (You need to install the original first, then copy the ate47 release over the top. [Original](https://github.com/shiversoftdev/t7-compiler))
+You can download T7 Compiler [Here](https://github.com/auroradoescode/t7-compiler-custom/releases/) (You need to install the original first, then copy the ate47 release over the top. [Original](https://github.com/shiversoftdev/t7-compiler))
 Visual Studio Code can be obtained [Here](https://code.visualstudio.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
