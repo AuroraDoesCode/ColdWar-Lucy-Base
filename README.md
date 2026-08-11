@@ -45,8 +45,8 @@
 
 ### Prerequisites
 
-To use this Mod Menu, You must have t7 compiler installed, and I have supplied a GUI app to make it easy: https://github.com/AuroraDoesCode/Black-Ops-GSC-Compiler-Frontend/releases
-You can download T7 Compiler [Here](https://github.com/auroradoescode/t7-compiler-custom/releases/) Run the t7c-installer.exe
+To use this Mod Menu, You must have t7 compiler installed, and I have supplied a GUI app to make it easy: https://github.com/AuroraDoesCode/Black-Ops-GSC-Compiler-Frontend/releases \
+You can download T7 Compiler [Here](https://github.com/auroradoescode/t7-compiler-custom/releases/) Run the t7c-installer.exe \
 Visual Studio Code can be obtained [Here](https://code.visualstudio.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
