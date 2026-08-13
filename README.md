@@ -47,7 +47,7 @@
 
 To use this Mod Menu, You must have t7 compiler installed, and I have supplied a GUI app to make it easy: https://github.com/AuroraDoesCode/Black-Ops-GSC-Compiler-Frontend/releases \
 You can download T7 Compiler [Here](https://github.com/auroradoescode/t7-compiler-custom/releases/) Run the t7c-installer.exe \
-Visual Studio Code can be obtained [Here](https://code.visualstudio.com/)
+Visual Studio Code can be obtained [Here](https://code.visualstudio.com/) if you want to edit a custom version, or supply your own changes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,15 +55,27 @@ Visual Studio Code can be obtained [Here](https://code.visualstudio.com/)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-	To use The Mod Menu, The following instructions can be used with ease. 
-	
+	To use the Menu, follow the below Instructions.
+
+	1. Click the link above and download the GUI frontend for GSC Injection. 
+	2. Install T7 Compiler via the link Above, this is a custom fork with BO3, BO4, AND BOCW Support.
+	3. Go to the Releases section, and download the latest Compiled.gscc linked there. This is your Menu script. Save it to your desktop.
+	4. Open the Frontend app you downloaded earlier, Hit Load Script, and go to your Desktop, Select the Compiled.gscc you downloaded earlier, and open it. 
+	5. If everything is correct, the GSC should appear in the box on the right. In the second Box, Select Zombies, and Tick the "T9" Checkbox". This tells the Injector to target Cold War.
+	6. Load Black Ops Cold War, go to Zombies, load into a match and quit match once you can move. This is to prepare the Engine to receive Injection scripts.
+	7. In the GUI Frontend, hit Inject Script. If everything goes well, you'll get a popup saying Injection Successful, and you can start a match. 
+
+	Visual Studio Code Instructions:
+
 	1. Download a copy of the Repository by clicking Code> Download Zip
 	
-	2. Load Visual Studio Code, Click File, Open Workspace, and load the Project.workspace in the BO4-Lucy-MP-Base Folder you downloaded
+	2. Load Visual Studio Code, Click File, Open Workspace, and load the Project.workspace in the ColdWar-Lucy-Base Folder you downloaded. Make sure you have your Keyboard shortcut for Run Test Task.
 	
-	3. Load Black Ops Cold War, Go into a Zombies Lobby, and Inject the Menu. Do NOT inject while already in game, You will crash.
+	3. Load Black Ops Cold War, Go into a Zombies Lobby, Load a game ONCE, then back out into the zombies lobby, before hitting Inject
 	
 	4. Once the game loads, You should be able to Aim and Knife to open the menu. You will know if it is running as you will see a message on screen.
+	
+	
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
