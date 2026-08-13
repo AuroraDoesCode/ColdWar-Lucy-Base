@@ -5,8 +5,8 @@
 [![Stars][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-**PLEASE NOTE RANK AND STATS DO NOT SAVE UNLESS YOU USE THE XP MODIFIER, AND KILLAURA AT HIGH ROUNDS. COLD WAR HAS AN XP AND LEVEL CAP.**<br>
-<h1>You may Fork this Project, and you may Use The Menu base in your own Projects, but from now on I am **NOT** Allowing Rehosting of the menu outside of this Repo, or my UnknownCheats thread. Any external links *MUST* Link to either this repository, or the UnknownCheats thread. Any Pre-compiled versions being shared by users (MrJasonDex/ModdingX or whatever he wants to call himself Specifically) are **NOT** Supported, as I do not know what additional changes they made (NO SOURCE CODE)</h1>
+[![The Lucy Menu for Black Ops Cold War!](https://img.youtube.com/vi/6sbv_SAmsn0/maxresdefault.jpg)](https://www.youtube.com/watch?v=6sbv_SAmsn0)
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
