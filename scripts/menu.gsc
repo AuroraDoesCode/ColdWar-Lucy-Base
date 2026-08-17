@@ -46,6 +46,7 @@ runMenuIndex(menu)
                 self addOpt("Fast Restart", &FastRestart);
                 self addOpt("Give Chopper Gunner", &GiveKillstreak, "chopper_gunner");
                 self addOptIncSlider("Self Revive Count", &SetSelfRevives,0,0,999,1);
+                self addOpt("Print Level Type", &PrintLevelType);
                 self addOptBool(self.zombiemodels, "Default Actor Zombies", &ZombieModelChanger);
             break;
         case "Map Selection":

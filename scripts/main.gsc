@@ -20,6 +20,7 @@ onPlayerSpawned()
 
     if(isDefined(level.player_too_many_weapons_monitor))
         level.player_too_many_weapons_monitor = undefined;
+
 }
 
 InitializeVarsPrecaches()

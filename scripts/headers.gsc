@@ -63,7 +63,7 @@ autoexec __init__sytem__()
 	system::register("synergycw", &__init__, undefined, undefined);
     
     //zombies per round
-    self.zombies_per_rounds = 999999;
+    //level.zombies_per_rounds = 999999;
     //remove rank cap
     //level.rankcap = undefined;
     //XP Multiplier
@@ -78,9 +78,7 @@ autoexec __init__sytem__()
     //level.var_211e3a53 = undefined;
 }
 
-event_handler[gametype_init] gametype_init(*eventstruct) {
-        
-}
+
 __init__()
 {
     callback::on_start_gametype(&init);
@@ -90,9 +88,7 @@ __init__()
 get_xp_multiplier_late() {
     wait 10;
     level.var_3426461d = &GetXPMultiplier;
-    //level.var_2f528eb0 = &GetXPMultiplier;//weapon XP Mult
 }
-
 on_round_end() {
     level endon(#"hash_3e765c26047c9f54", #"end_game");
     wait 10;
