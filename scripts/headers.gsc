@@ -67,7 +67,7 @@ autoexec __init__sytem__()
     //remove rank cap
     //level.rankcap = undefined;
     //XP Multiplier
-    thread get_xp_multiplier_late();
+    //thread get_xp_multiplier_late();
     // no contract
     //level.var_aa2d5655 = undefined;
     // can xp
@@ -87,7 +87,7 @@ __init__()
 }
 get_xp_multiplier_late() {
     wait 10;
-    level.var_3426461d = &GetXPMultiplier;
+    //level.var_3426461d = &GetXPMultiplier;
 }
 on_round_end() {
     level endon(#"hash_3e765c26047c9f54", #"end_game");

@@ -1,13 +1,11 @@
 init()
 {
-    
     self endon("disconnect", #"end_game");
     level thread InitializeVarsPrecaches();
     level.player_out_of_playable_area_monitor = undefined;
     if(isDefined(level.player_too_many_weapons_monitor))
             level.player_too_many_weapons_monitor = undefined;
 }
-
 onPlayerSpawned()
 {
     self endon("disconnect", #"end_game");
@@ -15,6 +13,10 @@ onPlayerSpawned()
     {
         level flag::wait_till("start_zombie_round_logic");
     }
+#ifdef LucyMenu
+    self iPrintLn("Lucy Menu is Running");
+
+#endif
     if(!isDefined(self.menuThreaded))
         self thread playerSetup();
 
@@ -22,7 +24,6 @@ onPlayerSpawned()
         level.player_too_many_weapons_monitor = undefined;
 
 }
-
 InitializeVarsPrecaches()
 {
     if(isDefined(level.InitializeVarsPrecaches))

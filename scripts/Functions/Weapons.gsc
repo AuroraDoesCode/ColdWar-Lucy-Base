@@ -4,17 +4,12 @@ GiveClientWeapon(WeaponName, player)//needs work, as some things don't work well
     if(!isDefined(Weapon)) return;
     if(zm_loadout::is_melee_weapon(Weapon)) slotIndex = 2;
     else slotIndex = 0;
-    player zm_weapons::weapon_give(
-    Weapon,      
-    0,           
-    1,           
-    slotIndex,           
+    player zm_weapons::weapon_give(Weapon,      0,           1,slotIndex,           
     1,       
     #"orange",   
     [],          
     1            
     );
-
     if(!zm_loadout::is_tactical_grenade( Weapon ) || !zm_loadout::is_lethal_grenade( Weapon ) || !zm_equipment::is_equipment(WeaponName) || !killstreaks::is_killstreak_weapon( Weapon ))
     {
         player switchtoweapon(Weapon);
